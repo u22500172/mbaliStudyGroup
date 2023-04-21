@@ -44,9 +44,11 @@
     <div class="row">
 
 
-        <button class="tabName" onclick="OpenTab('Biography', this)">Biography And Background</button>
+        <button class="tabName" onclick="OpenTab('Biography', this)" id="defaultOpen">Biography And Background</button>
         <button class="tabName" onclick="OpenTab('Hobbies', this)">Hobbies</button>
         <button class="tabName" onclick="OpenTab('Modules', this)">Modules</button>
+
+
         <div class="col-sm-4 content" id="tab-content" style="background-color: #f8f8f8;">
             <div class="mbali-biography biography">
                 <h4>Biography and Background</h4>
@@ -140,4 +142,30 @@
 </body>
 
 </html>
-<script src="scripts.js"></script>
+    <script type="text/javascript">
+
+        //Toggale Function
+    // resources: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_full_page_tabs
+
+    function OpenTab(tabName, element) {
+        var tabContent = document.getElementById("tab-content");
+        var tabLinkName = document.getElementsByClassName("tabName");
+
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].style.backgroundColor = "darkgrey";
+        }
+
+
+        document.getElementById(tabName).style.display = "block";
+
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+    }
+
+
+    </script>

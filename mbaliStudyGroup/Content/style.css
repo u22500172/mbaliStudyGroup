@@ -161,7 +161,7 @@ table tr td button:hover{
 
 
  /*Tabs*/
- #tab-content{
+ .tab-content{
      display:none;
  }
 

@@ -33,25 +33,25 @@
 
 <body>
 
-   <a href="/StudyGroup/CreatePerson">Create Person</a>
+    <a href="/StudyGroup/CreatePerson">Create Person</a>
     <table id="studentTable" class="table">
         <tr>
             <th>@Html.DisplayNameFor(model => model.StudentNumber)</th>
             <th>@Html.DisplayNameFor(model => model.FirstName)</th>
             <th>@Html.DisplayNameFor(model => model.LastName)</th>
             <th>@Html.DisplayNameFor(model => model.EmailAddress)</th>
-           <!-- <th></th>-->
+            <!-- <th></th>-->
             <th>@Html.DisplayNameFor(model => model.Delete)</th>
         </tr>
 
-        @foreach (var groupMemeber in ViewData["group"] as IList<mbaliStudyGroup.Models.StudyGroup>) 
+        @foreach (var groupMemeber in ViewData["group"] as IList<mbaliStudyGroup.Models.StudyGroup>)
         {
             <tr class="rowcontent">
                 <td> @groupMemeber.StudentNumber </td>
                 <td> @groupMemeber.FirstName</td>
                 <td> @groupMemeber.LastName </td>
                 <td> @groupMemeber.EmailAddress </td>
-               <!-- <td><button onclick="window.location.href=''"> Link </button> </td> https://www.scaler.com/topics/how-to-make-a-button-link-to-another-page-in-html/-->
+                <!-- <td><button onclick="window.location.href=''"> Link </button> </td> https://www.scaler.com/topics/how-to-make-a-button-link-to-another-page-in-html/-->
                 <td><button id="delete-student" onclick="DeleteStudent(this)">Delete</button></td>
             </tr>
         }
@@ -60,4 +60,27 @@
 </body>
 
 
-<script src="scripts.js"></script>
+
+    <script type="text/javascript" >
+
+        //Delete function
+        //resource: https://www.w3schools.com/jsref/met_table_deleterow.asp 
+        function DeleteStudent(r) {
+            var i = r.parentNode.parentNode.rowIndex;
+            document.getElementById("studentTable").deleteRow(i);
+        }
+
+
+        //Color chnage 
+        const pattern = /M/;
+        for (let i = 0; i < x.length; i++) {
+
+            if (pattern.test(x[i].cells[1].innerText))
+
+                x[i].style.color = "red";
+        }
+
+
+    </script>
+
+
