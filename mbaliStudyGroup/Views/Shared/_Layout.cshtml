@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My Study Group</title>
+    <link href="@Url.Content("/Content/Site.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Scripts/jquery-1.5.1.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/modernizr-1.7.min.js")"></script>
+</head>
+<body>
+   
+    
+    <div class="navbar navbar-inverse ">
+        <div class="container">
+            <div class="navbar-header">
+                <div class="navbar-brand">
+                    @Html.ActionLink("Study Group", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+
+                <!--https://www.w3schools.com/howto/howto_css_dropdown_navbar.asp-->
+
+                <div class="navbar">
+                    <div class="dropdown">
+                        <button class="dropbtn">
+                            List
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            @Html.ActionLink("Complete List Of People", "StudyGroup", "StudyGroup")
+                            <a href="~/HTML//MbaliView.html">Mbali</a>
+                            <a href="~/HTML//JohnView.html">John</a>
+                            <a href="~/HTML//ThandoView.html">Thando</a>
+                            <a href="~/HTML//AngelaView.html">Angela</a>
+                            <a href="~/HTML/ThaboView.html">Thabo</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="navbar-collapse ">
+           
+
+            </div>
+        </div>
+    </div>
+        
+    <div class="container body-content">
+        @if (ViewData["Title"].ToString() != "My Study Group")
+            {
+             <div hidden class="navbar navbar-inverse "> </div>
+            }
+
+        @RenderBody()
+
+       
+
+        
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My Study Group</p>
+        </footer>
+    </div>
+        
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

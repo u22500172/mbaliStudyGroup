@@ -1,0 +1,178 @@
+﻿body {
+   background-color: lightgreen;
+    color: #000000;
+}
+
+h2{ margin-top: 50px;}
+
+
+/*Biography, Modules, Hobbies Box*/
+.biography,
+.hobbies,
+.modules {
+    border: 1px solid green;
+    margin-top: 15px;
+    background-color:white;
+    padding-left: 10px;
+    padding-bottom: 50px;
+}
+
+.biography {
+    margin-top: 20px;
+}
+
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+.mbali-hobby img{
+    float: left;
+}
+
+.default-view .panel{
+    width: 1000px;
+    margin-left: 50px;
+
+}
+
+
+/*Menu*/
+/*resource used: https://www.w3schools.com/howto/howto_js_topnav.asp */
+.menu {
+    overflow: hidden;
+    background-color: #333;
+}
+
+
+.menu-item:not(:first-child){
+    margin-left: 30px;
+    padding-left: 10px;
+    border-left: 1px solid white;
+}
+
+
+.menu a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 10px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.menu a:not(:first-child){
+    margin-left: 30px;
+    padding-left: 10px;
+    border-left:1px solid white;
+ }
+
+.menu-item:hover{background-color:lightgreen;}
+
+.menu-item .active{background-color:lightgreen;}
+
+.menu a:hover { background-color: lightgreen;}
+
+.menu a:active a:visited{ background-color:lightgreen;}
+
+
+/*Study Group Table*/
+.table{ margin-top: 20px;}
+
+
+.table tr{
+    background-color:white;
+    border: 1px solid grey;
+  
+}
+
+
+.table tr th{
+    font-weight:300;
+    color:white;
+    background-color: green;
+    padding-right: 70px;
+    text-align:center;
+
+}
+
+.table tr td {
+    padding-right: 70px;
+    align-content:center;
+}
+
+.table tr td button {
+    background-color: green;
+    border:none;
+    padding: 5px 20px;
+    border-radius: 10%;
+    margin-left: 70px;
+    
+}
+
+.table tr td button a {
+     color: white;
+     text-decoration: none;
+ }
+
+table tr td button:hover{
+    background-color:lightgreen;
+}
+
+/*Modules Table*/
+.modules-list tr th,
+.modules tr td {
+    padding-left: 30px;
+}
+
+
+
+
+/*Images*/
+.person-img {
+    float: left;
+    margin-top: -10px;
+    margin-left:10px;
+    padding-right: 5px;
+}
+
+
+.hobby-img {
+    float: right; /* https://www.codecademy.com/forum_questions/51acec89324e0ccf6d00010f#:~:text=in%20order%20to%20have%20text,padding%3A%2010px%3B%20or%20less. */
+    margin-top: -60px;
+}
+
+.hobby-img,
+.mbali-hobby{
+    margin-right:10px;
+}
+
+.mbali-hobby {
+    float: right; /* https://www.codecademy.com/forum_questions/51acec89324e0ccf6d00010f#:~:text=in%20order%20to%20have%20text,padding%3A%2010px%3B%20or%20less. */
+    margin-top: -40px;
+}
+
+    /* flip horizontally */
+.hobby-img:hover,
+.person-img:hover,
+.mbali-hobby:hover{
+    -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+} /* https://www.w3schools.com/howto/howto_css_flip_image.asp */ 
+
+
+ /*Tabs*/
+ #tab-content{
+     display:none;
+ }
+
+.tabName {
+    background-color: #f8f8f8;
+    color:black;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    font-size: 17px;
+    width: 25%;
+}

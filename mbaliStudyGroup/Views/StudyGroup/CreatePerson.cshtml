@@ -1,0 +1,65 @@
+﻿@model  mbaliStudyGroup.Models.StudyGroup
+
+@{
+    ViewBag.Title = "CreatePerson";
+}
+
+<h2>CreatePerson</h2>
+<h3>PersonModel</h3>
+
+
+@using (Html.BeginForm("StudyGroup", "StudyGroup", FormMethod.Post))
+{
+
+    <label>Student Number:</label>
+    @Html.TextBoxFor(m => m.StudentNumber) <br />
+
+    <label>First Name:</label>
+    @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", placeholder = "John", name="fName" }) <br /><br />
+
+    <label>Last Name:</label>
+    @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", placeholder = "Smith", name="lName" })<br /><br />
+
+
+    <label>Email:</label>
+    @Html.TextBoxFor(m => m.EmailAddress, new { @class = "form-control", placeholder = "u12345678@tuks.co.za", name="email" })<br /><br />
+
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+@*<label>Student Name:</label>
+    <input type="text" class="form-control" placeholder="John" name="studentNum" />
+
+    <label>First Name:</label>
+    <input type="text" class="form-control" placeholder="John" name="fName" />
+
+    <label>Last Name:</label>
+    <input type="text" class="form-control" placeholder="John" name="lName" />
+
+    <label>Email:</label>
+    <input type="text" class="form-control" placeholder="John" name="email" />
+
+    <button type="submit" class="btn btn-primary">Submit</button>*@
+
+
+
+
+
+
+
+@Html.ActionLink("Back", "Studygroup", "StudyGroup")
