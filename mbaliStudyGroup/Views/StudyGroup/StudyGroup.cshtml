@@ -33,7 +33,12 @@
 
 <body>
 
-    <a href="/StudyGroup/CreatePerson">Create Person</a>
+    <a href="/StudyGroup/CreatePerson">Create Person</a> <br />
+    <lable>Search String: </lable>
+    <input id="personName" type="text" />
+    <button onclick="setTimeout(SearchPerson, 3000)">Submit</button>
+
+
     <table id="studentTable" class="table">
         <tr>
             <th>@Html.DisplayNameFor(model => model.StudentNumber)</th>
@@ -42,6 +47,7 @@
             <th>@Html.DisplayNameFor(model => model.EmailAddress)</th>
             <!-- <th></th>-->
             <th>@Html.DisplayNameFor(model => model.Delete)</th>
+
         </tr>
 
         @foreach (var groupMemeber in ViewData["group"] as IList<mbaliStudyGroup.Models.StudyGroup>)
@@ -57,6 +63,10 @@
         }
 
     </table>
+
+    <button >Save to Local Storage</button>
+    <button>Retrive from Local Storage</button>
+    <button>Clear Local Storage</button>
 </body>
 
 
@@ -72,15 +82,49 @@
 
 
         //Color chnage 
-        const pattern = /M/;
-        for (let i = 0; i < x.length; i++) {
+        //function SearchPerson (){
+            const pattern = document.getElementById("personName");
+            for (let i = 0; i < x.length; i++) {
 
-            if (pattern.test(x[i].cells[1].innerText))
+                if (pattern.test(x[i].cells[1].innerText))
 
-                x[i].style.color = "red";
+                    x[i].style.color = "red";
+            }
+
+       // }
+
+        var array = new Array();
+
+        function Save() {
+            var table = document.getElementById("studentTable");
+            //var tableRows = table.rows.length;
+            //var data = [];
+            //for (let i = 0; i <= tableRows - 1; i++) {
+
+            //    localStorage.setItem("myContent", myContent);
+            //}
+
+
+            localStorage.setItem("table", table);
+
+
+
+
         }
 
+        function Clear() {
+            localStorage.clear();
+            
+        }
 
+        function Retrive() {
+            var myContent = localStorage.getItem("table");
+            document.getElementByClassName("rowcontent").value = myContent;
+
+            //for (let i = 0; i < x.length; i++) {
+            //    document.getElementByClassName("rowcontent").value = myContent;
+            //}
+        }
     </script>
 
 
